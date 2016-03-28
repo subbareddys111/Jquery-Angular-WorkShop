@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>JQuery-Mobile Page Transition</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  </head>
+  <body>
+    <div data-role="page" id="pageone">
+      <div data-role="header">
+        <h1>Welcome to First Page</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the links to view pages with different transitions.</p>
+        <a href="#pagetwo" data-transition="slide">Click here for Page Two with Slide effect </a><br>
+        <a href="#pagethree" data-transition="flip">Click here for Page Three with Flip effect</a><br>
+        <a href="#pagefour" data-transition="flow">Click here for Page Four with Flow effect</a><br>
+        <a href="#pagefive" data-transition="turn">Click here for Page Five with turn effect</a><br>
+        <a href="#pagesix" data-transition="pop">Click here for Page Six with Pop effect</a>
+      </div>
+      <div data-role="footer">
+        <h1>First Footer Text</h1>
+      </div>
+    </div> 
+
+    <div data-role="page" id="pagetwo">
+      <div data-role="header">
+        <h1>Welcome To Second page</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the link .</p>
+        <a href="#pageone" data-transition="flip">Click here to go to page 1 with Flip</a><br>
+      </div>
+      <div data-role="footer">
+        <h1>Second Footer Text</h1>
+      </div>
+    </div> 
+
+    <div data-role="page" id="pagethree">
+      <div data-role="header">
+        <h1>Welcome To Third page</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the link.</p>
+        <a href="#pageone" data-transition="flip">Click here to go to page 1 with Flip</a><br>
+      </div>
+      <div data-role="footer">
+        <h1>Third Footer Text</h1>
+      </div>
+    </div> 
+
+    <div data-role="page" id="pagefour">
+      <div data-role="header">
+        <h1>Welcome To page Four</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the link.</p>
+        <a href="#pageone" data-transition="flip">Click here to go to page 1 with Flip</a><br>
+      </div>
+      <div data-role="footer">
+        <h1>Fourth Footer Text</h1>
+      </div>
+    </div> 
+
+    <div data-role="page" id="pagefive">
+      <div data-role="header">
+        <h1>Welcome To page five</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the link.</p>
+        <a href="#pageone" data-transition="flip">Click here to go to page 1 with flip</a><br>
+      </div>
+      <div data-role="footer">
+        <h1>Fifth Footer Text</h1>
+      </div>
+    </div> 
+
+    <div data-role="page" id="pagesix">
+      <div data-role="header">
+        <h1>Welcome To page Six</h1>
+      </div>
+      <div data-role="main" class="ui-content">
+        <p>Click on the link.</p>
+        <a href="#pageone" data-transition="flip">Click here to go to page 1 with Flip</a><br>
+      </div>
+      <div data-role="footer">
+        <h1>sixth Footer Text</h1>
+      </div>
+    </div> 
+  </body>
+</html>
