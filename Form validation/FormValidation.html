@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="FormValidation.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="formValidation.js"></script>
+  </head>
+  <body>
+    <form>
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" placeholder="Enter Your Name(required)" required data-required-message="Name is required.">
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" id="email" placeholder="Enter Your E-mail(required)" required data-required-message="Email is required." data-type-message="You must provide a valid email address.">
+      </div>
+      <div>
+        <button>Submit</button>
+      </div>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+* { box-sizing: border-box; }
+body {
+    font-size: 0.8em;
+    background:#ffffcc;
+}
+body input, body button {
+    font-size: 1.2em;
+}
+
+form > div {
+    margin: 3em;
+}
+form button {
+    width: 50%;
+    margin-left:125px;
+}
+label { display: block; }
+input {
+    width: 100%;
+    padding: 0.2em;
+}
+button {
+    padding: 0.2em;
+}
+.invalid {
+    background: red;
+    color: white;
+}
+.error {
+    color: red;
+}
