@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>JQuery-Ajax-Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  </head>
+  <body>
+    <input id="inp" type="text" placeholder="Enter any movie name">
+    <button id="but">search</button><br><br>
+    <p id="paraa"></p>
+    <table border='1'  style="background:Aqua">
+      <tr style="background:#ffcc00">
+        <th>title</th>
+        <th>year</th>
+        <th>critics_score</th>
+        <th>audience_score</th>
+        <th>images</th>
+      </tr>
+    </table>
+
+    <script>
+     $(document).ready(function(){
+	 
+    	 $("#but").click(function(){
+		var xyz=$("#inp").val(); 
+		
+	$.ajax({
+	    type:"GET",
+	    url:"http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=bzm7bkpkkm4wghg22xdbx4vy&q= " + xyz,
+	    contentType:"json",
+	    dataType:"jsonp",
+	    success:function(response){
+	    	var len = response.total;
+	    	$("#paraa").html(len+ " " + xyz + " matching movies found.");
+	    	     for (var i=0;i<len;i++){
+	                $("table").append("<tr><td>"+response.movies[i].title + 
+	                		"</td><td>"+response.movies[i].year +
+	                		"</td><td>"+response.movies[i].ratings.critics_score + 
+	                		"</td><td>"+response.movies[i].ratings.audience_score+
+	                		"</td><td><img src="+response.movies[i].posters.original+
+	                		"></td></tr>");
+	            }
+	        },
+	        
+        error:function(error){
+        	alert("Failed!");
+        }
+	});
+  });
+});
+    </script>
+  </body>
+</html>
