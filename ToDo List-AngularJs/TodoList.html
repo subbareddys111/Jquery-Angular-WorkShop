@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="ISO-8859-1">
+    <title>ToDoList AngularJs</title>
+    <link rel="stylesheet" type="text/css" href="ToDoList.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+    <script src="ToDoList.js"></script>
+  </head>
+  <body>
+    <div ng-app >
+      <div id="todoapp" ng-controller="TodoCtrl">
+        <header>
+          <h1>Angular To-Do List</h1>
+          <input id="new-todo" type="text" ng-model="todoText"  size="30"
+          placeholder="Type content and hit Enter" ng-keyup="addTodo()"/>
+        </header>
+
+        <section id="main" style="display: block;">
+          <div ng-show="isTodo()">
+            <input id="toggle-all" type="checkbox" ng-model="markAll"
+            ng-click="toggleMarkAll()"/>
+            <label for="toggle-all">Check all as complete</label>
+          </div>
+        
+          <ul id="todo-list" class="unstyled">
+            <li ng-repeat="todo in todos" ng-dblclick="toggleEditMode()">
+              <div class="view" ng-keyup="editTodo()">
+                <input type="checkbox" ng-model="todo.done"/>
+                <span class="done-{{todo.done}}" >{{todo.text}}</span>
+              </div>
+              <input class="edit" type="text" ng-model="todo.text"
+              ng-keyup="editOnEnter(todo)"/>
+            </li>
+          </ul>
+        </section>
+    
+        <footer style="display: block;">
+          <div class="todo-count">{{remaining()}} of {{todos.length}} remaining</div>
+            <a id="clear-completed" ng-click="clear()" ng-show="hasDone()">
+              Delete <span >{{(todos.length - remaining())}} {{itemText()}}</span>.
+            </a>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>
