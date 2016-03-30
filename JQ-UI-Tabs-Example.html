@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+   <head>
+       <meta charset="ISO-8859-1">
+       <title>JQ-UI-Tabs Example</title>
+           <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+		   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.5.1.min.js"></script>
+		   <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+		   <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/themes/ui-lightness/jquery-ui.css" rel="stylesheet" type="text/css" />
+           <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+   </head>
+   <body>
+ <div style="background:rgb(9,132,192); width:1114px; height:625px">
+   <h1 style="color:white; position:relative; margin-left:-56%; top:36px" class="text-center"><strong>TRAVELLER.com</strong></h1>
+   <hr style="margin-top:68px">
+   <div id="tabs" style="width:800px; margin-left:159px; top:27px">
+       <ul>
+    	 <li><a href="#tabs-1">Flights</a></li>
+   		 <li><a href="#tabs-2">Hotels</a></li>
+    	 <li><a href="#tabs-3">Rental Cars</a></li>
+ 	   </ul>
+       
+       <div id="tabs-1" style="background:lightbrown">
+       <img style="float:right; height:314px; width:274px;" src="https://lh6.ggpht.com/a8qcgzC7VYpswt_eCEnrQlGb8qnoPo0m4oVIHz81eaqFfo4LrILSj5F27ocEG5GGjA=w300">
+          <h2>Search For Flights</h2>
+          <form class="form-inline">
+            <div class="form-group">
+              <label for="FromandTo">From: </label><br>
+              <input class="FromandTo" placeholder="City or Airport">&nbsp;&nbsp;&nbsp;
+            </div>
+            <div class="form-group">
+              <label for="FromandTo">To: </label><br>
+              <input class="FromandTo" placeholder="City or Airport">
+            </div><br><br>
+             <label>Departing:</label><br>
+             <input type="text" class="datepicker" placeholder="Choose Your Date"><hr>
+             <h4>PASSENGERS:</h4>
+             </form>
+             <form class="form-inline">
+            <div class="form-group">
+             <label for="Adult">Adults(18+)</label><br>
+             <select id="Adult" style="width:176px">
+                <option>0Adults</option>
+                <option selected="selected">1Adult</option>
+                <option>2Adults</option>
+                <option>3Adults</option>
+                <option>4Adults</option>
+             </select> &nbsp;&nbsp;&nbsp;
+             </div>
+             <div class="form-group">
+             <label for="Children">Children(2-17 Years)</label><br>
+             <select id="Children" style="width:176px">
+                <option selected="selected">0Children</option>
+                <option>1Child</option>
+                <option>2Children</option>
+                <option>3Children</option>
+                <option>4Children</option>
+             </select>
+             </div>
+              <hr>
+             <button type="button" id="but1" class="btn btn-info">Search Flights</button>
+          </form>     
+     </div>
+     
+     <div id="tabs-2" style="background:lightblue">
+          <h2>Search For Hotels</h2>   
+          <h4>Where are you going?</h4>
+          <input type="text" class="FromandTo form-control" placeholder="Enter the city"><br><br>    
+            <form class="form-inline">
+              <div class="form-group"> 
+               <label>Check-In:</label><br>
+               <input type="text" class="datepicker" placeholder="Choose Your Date">&nbsp;&nbsp;&nbsp;
+              </div> 
+              <div class="form-group">
+               <label>Check-Out: </label><br>
+               <input type="text" class="datepicker" placeholder="Choose Your Date"> &nbsp;&nbsp;&nbsp;        
+              </div>
+              <div class="form-group">
+               <label for="rooms">Rooms:</label><br>
+               <select id="rooms">
+                   <option selected="selected">Room1</option>
+                   <option>Rooms2</option>
+                   <option>Rooms3</option>
+                   <option>Rooms4</option>
+               </select>
+               </div> <hr> 
+               </form> 
+               <button type="button" id="but2" class="btn btn-success">Search Hotels</button>                     
+     </div>
+     
+     <div id="tabs-3" style="background:lightyellow">
+          <h2>Search For Rental Cars</h2>   
+          <h4>Pick-Up From</h4>
+          <input type="text" class="FromandTo form-control" placeholder="Airport, City, or Point Of Interest"><br><br>
+          <label>Pick-Up Date: </label>
+          <input type="text" class="datepicker" placeholder="Choose Your Date">
+          <label for="pickup">Pick-Up Time</label>
+             <select id="pickup">
+                <option selected="selected">Noon</option>
+                <option>5Pm</option>
+                <option>10pm</option>
+                <option>9Am</option>
+             </select> <br><br>         
+          <label>Drop-Off Date: </label>
+          <input type="text" class="datepicker" placeholder="Choose Your Date">       
+          <label for="dropoff">Drop-Off</label>
+             <select id="dropoff">
+                <option selected="selected">Noon</option>
+                <option>5Pm</option>
+                <option>10pm</option>
+                <option>9Am</option>
+             </select>  <br> <br>       
+             <button type="button" id="but3" class="btn btn-success">Search All Rental Cars</button>    
+     </div>
+   </div>
+</div>  
+	  <script>
+	  $(function() {
+		    $( "#tabs" ).tabs();
+		  });
+	  
+	  $(function() {
+		    var availableTags = [
+		      "Australia",
+		      "Atlanta",
+		      "Boston",
+		      "Chicago",
+		      "Denver",
+		      "Newyork",
+		      "Hyderabad",
+		      "San Francisco",
+		      "San Jose",
+		      "San Diego",
+		      "Sacramento"
+		    ];
+		    $( ".FromandTo" ).autocomplete({
+		      source: availableTags
+		    });
+		  });
+	  
+	  $(function() {
+		    $( ".datepicker" ).datepicker();
+		  });
+	  
+	  $(function() {
+		    $( "#Adult" ).selectmenu();
+		 
+		    $( "#Children" ).selectmenu();
+	  });
+	  
+	  
+		  $("#but1").click(function(){
+		        alert("Flights Form is Submitted");
+		    });
+		  $("#but2").click(function(){
+		        alert("Hotels Form is Submitted");
+		    });
+		  $("#but3").click(function(){
+		        alert("Rental cars Form is Submitted");
+		    });
+	  
+	  </script>
+   </body>
+</html>
